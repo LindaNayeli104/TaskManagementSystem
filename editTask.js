@@ -61,6 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
     //isCompleted.value = task_title;
   }
 
+  //Update Task-------------------------------------------
   const editTaskForm = document.querySelector("#edit-task-form");
 
   editTaskForm.addEventListener("submit", (e) => {
@@ -128,5 +129,35 @@ document.addEventListener("DOMContentLoaded", () => {
         console.error(err.message);
         alert("Check your info");
       });
+  });
+
+  //Delete Task-------------------------------------------
+
+  const deleteTaskForm = document.querySelector("#delete-task-submit");
+
+  deleteTaskForm.addEventListener("click", (e) => {
+    let urlDelete = "https://ecsdevapi.nextline.mx/vdev/tasks-challenge/tasks";
+    let urlComplementDelete = "/" + idToPass + "?token=nextLine123456";
+
+    urlDelete = urlDelete + urlComplementDelete;
+
+    //e.preventDefault();
+    async function deleteTask() {
+      const response = await fetch(urlDelete, {
+        method: "DELETE",
+        mode: "cors",
+        headers: new Headers({
+          //Authentication: "Bearer ${token}",
+          Authorization:
+            "Bearer e864a0c9eda63181d7d65bc73e61e3dc6b74ef9b82f7049f1fc7d9fc8f29706025bd271d1ee1822b15d654a84e1a0997b973a46f923cc9977b3fcbb064179ecd",
+          "Content-Type": "application/x-www-form-urlencoded",
+        }),
+      });
+
+      const tasksDelete = await response.json();
+      window.history.go(-1);
+    }
+
+    deleteTask();
   });
 });
