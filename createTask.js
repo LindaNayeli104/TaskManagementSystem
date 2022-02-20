@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   createTaskForm.addEventListener("submit", (e) => {
     //Get elements
-    var title = document.querySelector("#task-title").value;
+    let title = document.querySelector("#task-title").value;
     title = title.toLowerCase();
     const dueDate = document.querySelector("#task-due-date").value;
     const comments = document.querySelector("#task-comments").value;
@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const isCompleted = 0;
 
     console.log(title);
-    var urlComplement = "?token=NextLine123456";
+    let urlComplement = "?token=NextLine123456";
     urlComplement =
       urlComplement +
       "&title=" +
@@ -52,6 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       .then((result) => {
         console.log(result);
+
         window.history.go(-1);
       })
       .catch((err) => {
