@@ -13,17 +13,15 @@ const description = document.querySelector("#task-description");
 const tags = document.querySelector("#task-tags");
 const isCompleted = document.querySelector("#task-checkmark");
 
-console.log(isCompleted.checked);
 document.addEventListener("DOMContentLoaded", () => {
-  let url = "https://ecsdevapi.nextline.mx/vdev/tasks-challenge/tasks";
-  let urlComplement = "/" + idToPass + "?token=nextLine123456";
+  let urlGet = "https://ecsdevapi.nextline.mx/vdev/tasks-challenge/tasks";
+  let urlComplementGet = "/" + idToPass + "?token=nextLine123456";
 
-  url = url + urlComplement;
-  //console.log("Miraaaaaaaaaaaaaaa: " + url);
+  urlGet = urlGet + urlComplementGet;
 
   //e.preventDefault();
   async function getTaskInfo() {
-    const response = await fetch(url, {
+    const response = await fetch(urlGet, {
       method: "GET",
       mode: "cors",
       headers: new Headers({
@@ -35,7 +33,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     const tasks = await response.json();
-    //console.log(tasks);
     renderTaks(tasks);
   }
 
@@ -63,4 +60,73 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     //isCompleted.value = task_title;
   }
+
+  const editTaskForm = document.querySelector("#edit-task-form");
+
+  editTaskForm.addEventListener("submit", (e) => {
+    let titlePut = document.querySelector("#task-title").value;
+    titlePut = titlePut.toLowerCase();
+    const dueDatePut = document.querySelector("#task-due-date").value;
+    const commentsPut = document.querySelector("#task-comments").value;
+    const descriptionPut = document.querySelector("#task-description").value;
+    const tagsPut = document.querySelector("#task-tags").value;
+    const isCompletedPut = document.querySelector("#task-checkmark").checked;
+
+    let urlPut = "https://ecsdevapi.nextline.mx/vdev/tasks-challenge/tasks";
+
+    let urlComplementPut = "/" + idToPass + "?token=nextLine123456";
+
+    let isCompletedValue;
+    if (isCompletedPut) {
+      isCompletedValue = 1;
+    } else {
+      isCompletedValue = 0;
+    }
+
+    urlComplementPut =
+      urlComplementPut +
+      "&title=" +
+      titlePut +
+      "&is_completed=" +
+      isCompletedValue +
+      "&due_date=" +
+      dueDatePut +
+      "&comments=" +
+      commentsPut +
+      "&description=" +
+      descriptionPut +
+      "&tags=" +
+      tagsPut;
+
+    //Fetch stuff
+
+    urlPut = urlPut + urlComplementPut;
+
+    console.log("Miraaaaaaaaaaaaaaa: " + urlPut);
+
+    e.preventDefault();
+    fetch(urlPut, {
+      method: "PUT",
+      mode: "cors",
+      headers: new Headers({
+        //Authentication: "Bearer ${token}",
+        Authorization:
+          "Bearer e864a0c9eda63181d7d65bc73e61e3dc6b74ef9b82f7049f1fc7d9fc8f29706025bd271d1ee1822b15d654a84e1a0997b973a46f923cc9977b3fcbb064179ecd",
+        "Content-Type": "application/x-www-form-urlencoded",
+      }),
+    })
+      .then((response) => {
+        response.json();
+      })
+
+      .then((result) => {
+        console.log(result);
+
+        //window.history.go(-1);
+      })
+      .catch((err) => {
+        console.error(err.message);
+        alert("Check your info");
+      });
+  });
 });
