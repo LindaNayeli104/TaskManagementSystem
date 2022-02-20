@@ -12,7 +12,6 @@ document.addEventListener("DOMContentLoaded", () => {
   //Get elements
   let title = "";
   const dueDate = "";
-  const isCompleted = 0;
 
   //Fetch stuff
 
@@ -41,6 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
     for (let i = 0; i < tasks.length; i++) {
       const task = tasks[i].title;
       const id = tasks[i].id;
+      const isCompleted = tasks[i].is_completed;
 
       const task_el = document.createElement("div");
       task_el.classList.add("task");
@@ -51,6 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const task_checkmark = document.createElement("input");
       task_checkmark.type = "checkbox";
       task_checkmark.classList.add("task-checkmark");
+      task_checkmark.checked = isCompleted;
 
       const task_id = document.createElement("input");
       task_id.type = "hidden";
