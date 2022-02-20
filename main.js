@@ -10,7 +10,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   const list_el = document.querySelector("#tasks");
   //Get elements
-  var title = "";
+  let title = "";
   const dueDate = "";
   const isCompleted = 0;
 
@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
   getTaks();
 
   function renderTaks(tasks) {
-    for (var i = 0; i < tasks.length; i++) {
+    for (let i = 0; i < tasks.length; i++) {
       const task = tasks[i].title;
       const id = tasks[i].id;
 
