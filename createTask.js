@@ -1,12 +1,42 @@
 document.addEventListener("DOMContentLoaded", () => {
   const createTaskForm = document.querySelector("#create-task-form");
 
-  var data = { title: "Work", is_completed: 0 };
-
-  let url =
-    "https://ecsdevapi.nextline.mx/vdev/tasks-challenge/tasks?token=nextLine12345&title=Act&is_completed=0";
-
   createTaskForm.addEventListener("submit", (e) => {
+    //Get elements
+    var title = document.querySelector("#task-title").value;
+    title = title.toLowerCase();
+    const dueDate = document.querySelector("#task-due-date").value;
+    const comments = document.querySelector("#task-comments").value;
+    const description = document.querySelector("#task-description").value;
+    const tags = document.querySelector("#task-tags").value;
+    const isCompleted = 0;
+
+    console.log(title);
+    var urlComplement = "?token=NextLine12345";
+    urlComplement =
+      urlComplement +
+      "&title=" +
+      title +
+      "&is_completed=" +
+      isCompleted +
+      "&due_date=" +
+      dueDate +
+      "&comments=" +
+      comments +
+      "&description=" +
+      description +
+      "&tags=" +
+      tags;
+
+    //Fetch stuff
+
+    var data = { title: "Work", is_completed: 0 };
+
+    let url = "https://ecsdevapi.nextline.mx/vdev/tasks-challenge/tasks";
+
+    url = url + urlComplement;
+    console.log("Miraaaaaaaaaaaaaaa: " + url);
+
     e.preventDefault();
     fetch(url, {
       method: "POST",
@@ -18,12 +48,17 @@ document.addEventListener("DOMContentLoaded", () => {
         "Content-Type": "application/x-www-form-urlencoded",
       }),
     })
-      .then((response) => response.json())
+      .then((response) => {
+        response.json();
+      })
+
       .then((result) => {
         console.log(result);
+        window.history.go(-1);
       })
       .catch((err) => {
         console.error(err.message);
+        alert("Check your info");
       });
   });
 });
