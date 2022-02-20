@@ -37,8 +37,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const task_content_el = document.createElement("div");
       task_content_el.classList.add("content");
-      task_content_el.innerText = task;
 
+      const task_checkmark = document.createElement("input");
+      task_checkmark.type = "checkbox";
+      task_checkmark.classList.add("task-checkmark");
+
+      const task_text = document.createElement("a");
+      task_text.href = "editTask.html";
+      task_text.classList.add("task-text");
+
+      task_text.innerText = task;
+
+      task_content_el.appendChild(task_checkmark);
+      task_content_el.appendChild(task_text);
       task_el.appendChild(task_content_el);
 
       list_el.appendChild(task_el);
