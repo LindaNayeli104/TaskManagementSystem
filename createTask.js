@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const isCompleted = 0;
 
     console.log(title);
-    var urlComplement = "?token=NextLine12345";
+    var urlComplement = "?token=NextLine123456";
     urlComplement =
       urlComplement +
       "&title=" +
@@ -29,8 +29,6 @@ document.addEventListener("DOMContentLoaded", () => {
       tags;
 
     //Fetch stuff
-
-    var data = { title: "Work", is_completed: 0 };
 
     let url = "https://ecsdevapi.nextline.mx/vdev/tasks-challenge/tasks";
 
