@@ -25,3 +25,11 @@ header h1 {
   color: gray;
   margin-bottom: 1rem;
 }
+
+.task-text {
+  text-decoration: none;
+}
+
+[type="checkbox"]:checked + .task-text {
+  text-decoration: line-through;
+}
