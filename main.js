@@ -40,6 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function renderTaks(tasks) {
     for (var i = 0; i < tasks.length; i++) {
       const task = tasks[i].title;
+      const id = tasks[i].id;
 
       const task_el = document.createElement("div");
       task_el.classList.add("task");
@@ -51,6 +52,11 @@ document.addEventListener("DOMContentLoaded", () => {
       task_checkmark.type = "checkbox";
       task_checkmark.classList.add("task-checkmark");
 
+      const task_id = document.createElement("input");
+      task_id.type = "hidden";
+      task_id.classList.add("task-id");
+      task_id.value = id;
+
       const task_text = document.createElement("a");
       task_text.href = "editTask.html";
       task_text.classList.add("task-text");
@@ -58,6 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
       task_text.innerText = task;
 
       task_content_el.appendChild(task_checkmark);
+      task_content_el.appendChild(task_id);
       task_content_el.appendChild(task_text);
       task_el.appendChild(task_content_el);
 
