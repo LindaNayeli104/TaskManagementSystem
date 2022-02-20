@@ -3,14 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Create My Task</title>
+    <title>Edit My Task</title>
   </head>
   <body>
     <header>
-      <h2>Create a New Task</h2>
-      <form id="create-task-form">
+      <h2>Edit My Task</h2>
+      <!-- <form id="create-task-form" method="GET" action="index.html"></form> -->
+      <form id="create-task-form" action="index.html">
         <h2>What is to be done?</h2>
-        <input type="input" class="task-title" placeholder="Enter task here" />
+        <input
+          type="text"
+          id="task-title"
+          name="task-title"
+          placeholder="Enter task here"
+          required
+        />
 
         <div class="task-finished-checkbox">
           <input type="checkbox" class="task-checkmark" />
@@ -18,25 +25,41 @@
         </div>
 
         <h2>Due date</h2>
-        <input type="input" class="calendar" placeholder="Calendar" />
+        <input
+          type="text"
+          id="task-due-date"
+          name="task-due-date"
+          placeholder="Calendar"
+        />
 
         <h2>Comments</h2>
-        <input type="input" class="task-comments" placeholder="Add comments" />
+        <input
+          type="text"
+          id="task-comments"
+          name="task-comments"
+          placeholder="Add comments"
+        />
 
         <h2>Description</h2>
         <input
-          type="input"
-          class="task-description"
+          type="text"
+          id="task-description"
+          name="task-description"
           placeholder="Add description"
         />
 
         <h2>Tags</h2>
-        <input type="input" class="task-tags" placeholder="Add tags" />
-      </form>
+        <input
+          type="text"
+          id="task-tags"
+          name="task-tags"
+          placeholder="Add tags"
+        />
 
-      <div class="actions">
-        <button class="save">Save</button>
-      </div>
+        <input type="submit" id="create-task-submit" value="Palomita" />
+      </form>
+      <a href="index.html">Go Home</a>
     </header>
+    <script src="editTask.js"></script>
   </body>
 </html>

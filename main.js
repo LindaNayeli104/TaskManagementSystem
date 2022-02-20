@@ -69,6 +69,16 @@ document.addEventListener("DOMContentLoaded", () => {
       task_el.appendChild(task_content_el);
 
       list_el.appendChild(task_el);
+
+      task_text.addEventListener("click", () => {
+        console.log("Entraaaaaaaaaaaaaa");
+        localStorage.setItem("idToPass", id);
+        return false;
+      });
     }
+  }
+
+  function passId() {
+    let idToPass = document.querySelector("task-id");
   }
 });
