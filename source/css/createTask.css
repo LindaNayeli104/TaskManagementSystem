@@ -45,8 +45,6 @@ header input {
 }
 
 #create-task-submit {
-  height: 40px;
-  weight: 40px;
-  align-self: flex-start;
-  padding-right: 50px;
+  height: 55px;
+  display: block;
 }
