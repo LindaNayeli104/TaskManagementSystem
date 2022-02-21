@@ -13,8 +13,8 @@ Task management system that allows viewing, adding, editing and deleting tasks b
 
 
 ## API headers
-> + Use Bearer Authorization
-> + Use Content-Type: application/x-www-form-urlencoded
+> + Bearer Authorization
+> + Content-Type: application/x-www-form-urlencoded
 
 
 ## Technology Stack
