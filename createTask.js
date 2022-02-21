@@ -12,9 +12,29 @@ document.addEventListener("DOMContentLoaded", () => {
     const tags = document.querySelector("#task-tags").value;
     const isCompleted = 0;
 
-    //Fetch stuff
+    let urlComplement = "?token=NextLine12345678";
+    urlComplement =
+      urlComplement +
+      "&title=" +
+      title +
+      "&is_completed=" +
+      isCompleted +
+      "&due_date=" +
+      dueDate +
+      "&comments=" +
+      comments +
+      "&description=" +
+      description +
+      "&tags=" +
+      tags;
 
-    console.log("Postman code");
+    //Fetch stuff
+    let url =
+      "https://ecsdevapi.nextline.mx/vdev/tasks-challenge/tasks" +
+      urlComplement;
+
+    console.log(url);
+
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
     myHeaders.append(
@@ -28,12 +48,15 @@ document.addEventListener("DOMContentLoaded", () => {
       redirect: "follow",
     };
 
-    fetch(
-      "https://ecsdevapi.nextline.mx/vdev/tasks-challenge/tasks?token=nextLine1234567&title=prueba12&is_completed=0&due_date=2022-02-18&comments=Cantar a lot&description=Cantar 5 times more&tags=Cantar, 5 times",
-      requestOptions
-    )
+    console.log("fetch");
+    fetch(url, requestOptions)
       .then((response) => response.text())
-      .then((result) => console.log(result))
+      .then((result) => {
+        console.log(result);
+        window.history.go(-1);
+      })
       .catch((error) => console.log("error", error));
   });
 });
+
+//"https://ecsdevapi.nextline.mx/vdev/tasks-challenge/tasks?token=NextLine12345678&title=prueba14&is_completed=0&due_date=2022-02-18&comments=Cantar a lot&description=Cantar 5 times more&tags=Cantar, 5 times",
