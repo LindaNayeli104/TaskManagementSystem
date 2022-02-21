@@ -11,8 +11,8 @@ Task management system that allows viewing, adding, editing and deleting tasks b
 > + PUT -> https://ecsdevapi.nextline.mx/vdev/tasks-challenge/tasks/task_id
 > + DELETE -> https://ecsdevapi.nextline.mx/vdev/tasks-challenge/tasks/task_id
 
-> Use Bearer Authorization
-> Use Content-Type: application/x-www-form-urlencoded
+> + Use Bearer Authorization
+> + Use Content-Type: application/x-www-form-urlencoded
 
 
 ## Technology Stack
