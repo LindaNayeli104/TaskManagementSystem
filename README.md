@@ -17,12 +17,6 @@ Task management system that allows viewing, adding, editing and deleting tasks b
 * Content-Type: application/x-www-form-urlencoded
 
 
-## Technology Stack
-* HTML5
-* CSS3
-* JavaScript
-* Postman
-
 ## Task data
 * title (Mandatory)
 * is_completed (Mandatory)
@@ -30,6 +24,13 @@ Task management system that allows viewing, adding, editing and deleting tasks b
 * comments (Optional)
 * description (Optional)
 * tags (Optional)
+
+
+## Technology Stack
+* HTML5
+* CSS3
+* JavaScript
+* Postman
 
 
 ## License
