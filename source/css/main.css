@@ -1,0 +1,58 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: "Fira sans", sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: rgb(146, 139, 139);
+  color: white;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.task-list {
+  padding: 30px 30px;
+}
+
+.task-list h2 {
+  padding-bottom: 15px;
+  color: rgb(67, 107, 180);
+}
+
+.task {
+  padding-bottom: 10px;
+}
+
+.task-text {
+  text-decoration: none;
+  padding-left: 10px;
+}
+
+.task-text {
+  color: rgb(255, 255, 255);
+}
+
+[type="checkbox"]:checked + .task-text {
+  text-decoration: line-through;
+}
+
+.add-new-task img {
+  height: 40px;
+  weight: 40px;
+}
