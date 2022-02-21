@@ -15,7 +15,7 @@ const isCompleted = document.querySelector("#task-checkmark");
 
 document.addEventListener("DOMContentLoaded", () => {
   let urlGet = "https://ecsdevapi.nextline.mx/vdev/tasks-challenge/tasks";
-  let urlComplementGet = "/" + idToPass + "?token=nextLine123456";
+  let urlComplementGet = "/" + idToPass + "?token=nextLine1234567";
 
   urlGet = urlGet + urlComplementGet;
 
@@ -75,7 +75,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let urlPut = "https://ecsdevapi.nextline.mx/vdev/tasks-challenge/tasks";
 
-    let urlComplementPut = "/" + idToPass + "?token=nextLine123456";
+    let urlComplementPut = "/" + idToPass + "?token=nextLine1234567";
 
     let isCompletedValue;
     if (isCompletedPut) {
@@ -137,7 +137,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   deleteTaskForm.addEventListener("click", (e) => {
     let urlDelete = "https://ecsdevapi.nextline.mx/vdev/tasks-challenge/tasks";
-    let urlComplementDelete = "/" + idToPass + "?token=nextLine123456";
+    let urlComplementDelete = "/" + idToPass + "?token=nextLine1234567";
 
     urlDelete = urlDelete + urlComplementDelete;
 
