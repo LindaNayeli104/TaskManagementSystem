@@ -8,7 +8,7 @@
   </head>
   <body>
     <header>
-      <h2>Edit My Task</h2>
+      <h1>Edit My Task</h1>
       <!-- <form id="create-task-form" method="GET" action="index.html"></form> -->
       <!-- <form id="edit-task-form" action="index.html"> -->
       <form id="edit-task-form">
@@ -25,6 +25,7 @@
           <input type="checkbox" id="task-checkmark" />
           <h2>Task finished?</h2>
         </div>
+       
 
         <h2>Due date</h2>
         <input
@@ -57,11 +58,11 @@
           name="task-tags"
           placeholder="Add tags"
         />
-
-        <input type="image" id="edit-task-submit" value="Palomita" src="./source/images/done.png" />
-        <input type="image" id="delete-task-submit" value="Bote basura" src="./source/images/delete2.png"></input>
-      </form>
-      <a href="index.html">Go Home</a>
+        <div class="task-options">
+          <input type="image" id="edit-task-submit" value="Palomita" src="./source/images/done.png" />
+          <input type="image" id="delete-task-submit" value="Bote basura" src="./source/images/delete2.png"></input>
+        </div>
+         </form>
     </header>
     <script src="/source/scripts/editTask.js"></script>
   </body>

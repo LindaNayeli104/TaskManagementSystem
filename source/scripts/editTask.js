@@ -123,7 +123,7 @@ document.addEventListener("DOMContentLoaded", () => {
       .then((result) => {
         console.log(result);
 
-        //window.history.go(-1);
+        window.history.go(-1);
       })
       .catch((err) => {
         console.error(err.message);
