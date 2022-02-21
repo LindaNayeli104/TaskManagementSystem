@@ -8,8 +8,8 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background: pink;
-  color: black;
+  background: rgb(146, 139, 139);
+  color: white;
 }
 
 header {
@@ -22,7 +22,7 @@ header {
 header h1 {
   font-size: 2.5rem;
   font-weight: 300;
-  color: gray;
+  color: white;
   margin-bottom: 1rem;
 }
 
@@ -32,4 +32,9 @@ header h1 {
 
 [type="checkbox"]:checked + .task-text {
   text-decoration: line-through;
+}
+
+.add-new-task img {
+  height: 40px;
+  weight: 40px;
 }
