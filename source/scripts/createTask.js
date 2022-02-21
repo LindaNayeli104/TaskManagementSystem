@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const createTaskForm = document.querySelector("#create-task-form");
 
   createTaskForm.addEventListener("submit", (e) => {
+    console.log("Entraaaaaaaaaaaaa");
     //Get elements
     e.preventDefault();
     let title = document.querySelector("#task-title").value;

@@ -26,8 +26,26 @@ header h1 {
   margin-bottom: 1rem;
 }
 
+.task-list {
+  padding: 30px 30px;
+}
+
+.task-list h2 {
+  padding-bottom: 15px;
+  color: rgb(67, 107, 180);
+}
+
+.task {
+  padding-bottom: 10px;
+}
+
 .task-text {
   text-decoration: none;
+  padding-left: 10px;
+}
+
+.task-text {
+  color: rgb(255, 255, 255);
 }
 
 [type="checkbox"]:checked + .task-text {
