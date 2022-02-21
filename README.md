@@ -23,6 +23,15 @@ Task management system that allows viewing, adding, editing and deleting tasks b
 * JavaScript
 * Postman
 
+## Task data
+> + title (Mandatory)
+> + is_completed (Mandatory)
+> + due_date (Optional)
+> + comments (Optional)
+> + description (Optional)
+> + tags (Optional)
+
+
 ## License
 [MIT](https://github.com/git/git-scm.com/blob/main/MIT-LICENSE.txt) License
 
